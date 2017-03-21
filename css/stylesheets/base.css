@@ -1,0 +1,84 @@
+/*  Expressive CSS
+
+	Author & copyright (c) 2015: John Polacek
+	Follow on Twitter: @johnpolacek
+	Dual MIT & GPL license
+
+	Project Page: http://johnpolacek.github.com/expressive-css
+	Project Repo: https://github.com/johnpolacek/expressive-css
+*/
+@font-face {
+  font-family: 'Hind Siliguri';
+  font-weight: 300;
+  font-style: normal;
+  src: url("./fonts/Hind-Siliguri-300.woff2") format("woff2"), url("/css/Hind-Siliguri-300.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Hind Siliguri';
+  font-weight: 400;
+  font-style: normal;
+  src: url("./fonts/Hind-Siliguri-400.woff2") format("woff2"), url("/css/Hind-Siliguri-400.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Hind Siliguri';
+  font-weight: 500;
+  font-style: normal;
+  src: url("./fonts/Hind-Siliguri-500.woff2") format("woff2"), url("/css/Hind-Siliguri-500.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Hind Siliguri';
+  font-weight: 600;
+  font-style: normal;
+  src: url("./fonts/Hind-Siliguri-600.woff2") format("woff2"), url("/css/Hind-Siliguri-600.woff") format("woff");
+}
+
+html {
+  font-family: 'Hind Siliguri',Verdana,sans-serif;
+  font-weight: 400;
+  color: #234;
+  line-height: 1.6;
+}
+
+header, footer {
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+p, pre, blockquote {
+  margin: 0;
+  padding: 0 0 16px;
+  font-weight: normal;
+}
+
+code {
+  font-family: Monaco, monospace;
+  font-size: 80%;
+}
+
+ul {
+  padding-left: 1.5em;
+}
+
+ul ul {
+  padding-top: 8px;
+}
+
+li {
+  padding-bottom: 8px;
+}
+
+a {
+  color: #287dbe;
+  text-decoration: none;
+}
+
+p a, li a, .link-text {
+  text-decoration: underline;
+}

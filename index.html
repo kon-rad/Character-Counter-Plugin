@@ -1,0 +1,95 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Send a Message</title>
+        <meta name="description" content="Send a message">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/style.min.css">
+        <link rel="shortcut icon" href="favicon.ico">
+    </head>
+
+    <body class="bgr-grey-lt expand-v grid-flex-center pad-2">
+
+        <div class="box-480 box-center bgr-white border rounded animate">
+            <div class="grid-12 pad-3">
+                <h1 class="grid-12 text-light text-center text-blue-lt pad-3-bottom">Send a message</h1>
+                <form class="grid-12" id="messageForm">
+                    <div class="grid-12 pad-1-bottom">
+                        <label for="to">To</label>
+                        <input id="to" name="to" type="text" required />
+                    </div>
+                    <div class="grid-12 pad-3-bottom">
+                        <label for="from">From</label>
+                        <input id="from" name="from" type="text" required />
+                    </div>
+                    <div class="grid-12 pad-1-bottom">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" rows="4" maxlength="140" data-characterCounter required></textarea>
+                    </div>
+                    <div class="grid-12 pad-1-bottom">
+                        <label for="message">Additional Info</label>
+                        <textarea name="message" id="additionalInfo" rows="4" maxlength="140" data-characterCounter required></textarea>
+                    </div>
+                    <div class="offset-6 grid-6 s-grid-12 s-offset-0 pad-1-vert">
+                        <input type="submit" value="Send" class="btn btn-large wide" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="overlay abs wide bgr-trans-dark hidden" id="modalSuccess">
+            <div class="abs pos-top pos-left wide tall clickable" data-modal-close></div>
+            <div class="modal-panel rel pos-top pos-left bgr-white box-center box-400 pad-3 rounded shadow">
+                <span href="#" class="abs pos-top pos-right pad-btn-large clickable text-24 lineheight-1" data-modal-close>&times;</span>
+                <h3 class="pad-1-bottom">All Set!</h3>
+                <p>Your message was sent.</p>
+                <div class="pad-2-top text-right">
+                    <button data-modal-close>OK</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="overlay abs wide bgr-trans-dark hidden" id="modalError">
+            <div class="abs pos-top pos-left wide tall clickable" data-modal-close></div>
+            <div class="modal-panel rel pos-top pos-left bgr-white box-center box-400 pad-3 rounded shadow">
+                <span href="#" class="abs pos-top pos-right pad-btn-large clickable text-24 lineheight-1" data-modal-close>&times;</span>
+                <h3 class="pad-1-bottom">Oops!</h3>
+                <p>Something went wrong.</p>
+                <div class="pad-2-top text-right">
+                    <button data-modal-close>OK</button>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="js/core.js"></script>
+        <script type="text/javascript" src="js/components/jquery.char-counter.js"></script>
+        <script type="text/javascript" src="js/components/modal.js"></script>
+
+        <script type="text/javascript">
+            $(function() {
+                $('#to').focus();
+                $('#messageForm').on('submit',function(e) {
+                    e.preventDefault();
+                    $.ajax({
+                        url: 'api/success.json', // placeholder
+                        type: 'POST',
+                        dataType: 'json',
+                        success: function(data) {
+                            if (data.result == '200') {
+                                _G.modal.open('modalSuccess');
+                            } else {
+                                _G.modal.open('modalError');
+                            }
+                        },
+                        error: function(data) {
+                            _G.modal.open('modalError');
+                        }
+                    });
+                });
+            });
+        </script>
+
+    </body>
+</html>

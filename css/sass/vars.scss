@@ -1,0 +1,43 @@
+// COLORS
+$blue-lt: #75c5df;
+$blue: #287dbe;
+$green: #bccf02;
+$green-dk: #5bb12f;
+$green: #9fc74d;
+$white: #fff;
+$grey-lt: #ececec;
+$grey: #999;
+$red: #cd242a;
+$dark: #234;
+$colors: (
+	$blue-lt,
+	$blue,
+	$green,
+	$green-dk,
+	$white,
+	$dark,
+	$grey-lt,
+	$grey,
+	$red
+);
+$colorNames: (
+	'blue-lt',
+	'blue',
+	'green',
+	'green-dk',
+	'white',
+	'dark',
+	'grey-lt',
+	'grey',
+	'red'
+);
+
+// UNITS
+$pad1: 8px;
+$pad2: 16px;
+$pad3: 32px;
+$borderRadius: 4px;
+$buttonPaddingSmaller: 2px 8px;
+$buttonPadding: 4px 12px;
+$buttonPadding2: 8px 16px;
+$buttonPadding3: 16px 24px;
