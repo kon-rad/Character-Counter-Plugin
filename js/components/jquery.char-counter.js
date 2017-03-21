@@ -21,12 +21,12 @@
 
 		return this.each(function(options) {
 			var $this = $(this);
-	    	var $label = $this.siblings("label");
-		    var chars = settings.displayMax - $this.val().length;
-	    	var display = "<span class='counter-display' style='text-align:right;float:right;color:#878787;font-size:14px;'>" + chars + " characters remaining</span>"
-			
+			var $label = $this.siblings("label");
+			var chars = settings.displayMax - $this.val().length;
+			var display = "<span class='counter-display' style='text-align:right;float:right;color:#878787;font-size:14px;'>" + chars + " characters remaining</span>"
+
 			$this.siblings("label").append(display);
-			
+
 			var $counterDisplay = $label.find(".counter-display");
 
 			$this.attr({
